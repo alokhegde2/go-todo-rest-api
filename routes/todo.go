@@ -6,5 +6,6 @@ import (
 )
 
 func Todo(r *mux.Router) {
-	r.HandleFunc("/addTodo", controllers.AddTodo)
+	r.HandleFunc("/addTodo", controllers.AddTodo).Methods("POST")
+	r.HandleFunc("/getTodos", controllers.GetTodos).Methods("GET")
 }
